@@ -6,7 +6,7 @@ def count_filter_document():
     client=pymongo.MongoClient(getenv("FILTERS_MONGODB_URI"))
     total_doc=client['Hifi'].records.count_documents({})
     document_count=client['Hifi'].records.count_documents({'status':{'$exists':False}})
-    keyword_count=client['Hifi'].records.distinct('keyword')
+    keyword_count=len(client['Hifi'].records.distinct('keyword'))
 
     API=getenv("TELEGRAM_MESSAGE_API")
     
