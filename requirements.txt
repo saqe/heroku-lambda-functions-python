@@ -8,3 +8,4 @@ opencv-contrib-python==4.4.0.40
 Werkzeug==1.0.1
 gunicorn
 pymongo==3.11.0
+requests
