@@ -10,10 +10,9 @@ def count_filter_document():
     
     API=API.format(
         chat_id=getenv("TELEGRAM_GROUP_CHAT_ID"),
-        message="total documents : "+str(total_doc)+"\n"
-                +"Non-empty Docs : "+str(document_count)
+        message="Total documents : "+str(total_doc)+"\n"
+               +"Non-empty Docs  : "+str(document_count)
         )
-
     requests.get(API)
     return {
         'status':200,
