@@ -4,7 +4,7 @@ from os import getenv
 
 def count_filter_document():
     client=pymongo.MongoClient(getenv("FILTERS_MONGODB_URI"))
-    total_doc=client['Hifi'].records.count_documents()
+    total_doc=client['Hifi'].records.count_documents({})
     document_count=client['Hifi'].records.count_documents({'status':{'$exists':False}})
     API=getenv("TELEGRAM_MESSAGE_API")
     
